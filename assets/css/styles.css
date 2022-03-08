@@ -122,5 +122,15 @@ body {
 .fa-patreon:hover,
 .fa-twitter:hover,
 .fa-facebook-f:hover {
-    color: #fff;
+    opacity: .3;
+}
+
+/*======================
+-----------
+Youtube info
+-----------
+======================*/
+.modal-body,
+.modal-title {
+    color: black;
 }
