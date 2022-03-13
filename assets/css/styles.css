@@ -13,7 +13,14 @@ a {
 body {
     color: var(--blanco);
 }
-
+h2 {
+    font-size: 28px;
+}
+@media (min-width: 769px) {
+    h2 {
+        font-size: 38px;
+    }
+}
 /*======================
 -----------
 utilitis
@@ -159,7 +166,7 @@ header
 }
 @media (min-width: 998px) {
     .redes_sociales {
-        margin-right: 1.2rem;
+        margin-right: .8rem;
     }
     .redes_sociales--enlace {
         font-size: 2rem;
@@ -200,19 +207,37 @@ Sobre mi
 ======================*/
 #sobre_mi {
     padding: 2rem 0rem;
-    height: 100vh;
+}
+@media (min-width: 768px) {
+    #sobre_mi {
+        padding: 2rem 0rem;
+        height: 100vh;
+    }
 }
 #sobre_mi h2{
-    font-size: 38px;
+    font-size: 28px;
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 2rem auto;
+}
+#sobre_mi p{
+    font-size: 18px;
+}
+@media (min-width: 768px) {
+    #sobre_mi p{
+        font-size: 20px;
+    }
+    #sobre_mi h2{
+        font-size: 38px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
 }
 .sobre_mi--img {
     background-color: rgba(255, 255, 255, .5);
     border-radius: 1rem;
 }
 #sobre_mi img{
-    width: 80%;
+    width: 90%;
 }
 @media (min-width: 768px) {
     #sobre_mi img{
@@ -280,9 +305,16 @@ Youtube
 ======================*/
 #youtube {
     background-color: #c4302b;
-    padding: 2rem 0rem;
+    padding: 4rem 0rem;
 }
-
+#youtube p{
+    font-size: 18px;
+}
+@media (min-width: 768px) {
+    #youtube p{
+        font-size: 20px;
+    }
+}
 #youtube_vid {
     display: grid;
     grid-template-columns: 1fr;
@@ -324,6 +356,7 @@ twiter
 #twetter {
     padding: 2rem 0rem;
 }
+
 #twetter > div {
     display: grid;
     grid-template-columns: 1f;
