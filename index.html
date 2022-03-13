@@ -28,7 +28,7 @@
     <header class="bg-info">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
             <div class="container">
-                <a class="navbar-brand fs-3" href="index.html">YoSoyWolfhug</a>
+                <a class="navbar-brand fs-3 px-3" href="index.html">YoSoyWolfhug</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-enlaces"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -36,14 +36,15 @@
                 <div class="collapse navbar-collapse" id="nav-enlaces">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                        <a class="nav-link" href="#">Sobre Mi</a>
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="#sobre_mi">Sobre Mi</a>
+                        <a class="nav-link" href="#youtube">Youtube</a>
+                        <a class="nav-link" href="#twetter">Twitter</a>
                     </div>
                 </div>
             </div>
 
             <!-- redes sociales -->
-            <div class="redes_sociales">
+            <div class="redes_sociales d-none d-md-block">
                 <div class="redes_sociales--contenedor">
                     <a href="https://discord.com/invite/gfC8K2QhR7" class="redes_sociales--enlace" target="_blank"><i
                             class="fab fa-discord"></i></a>
@@ -82,13 +83,124 @@
                 </div>
             </div>
         </div>
+
+        <div id="stats_yt">
+            <div class="bg-primary">
+                <i class="fab fa-youtube"></i>
+                <p data-titulo="suscriptores" class="counter">0</p>
+                <h3>Suscriptores</h3>
+            </div>
+
+            <div class="bg-primary">
+                <i class="fas fa-photo-video"></i>
+                <p data-titulo="videos_totales" class="counter">0</p>
+                <h3>Videos Subidos</h3>
+            </div>
+
+            <div class="bg-primary">
+                <i class="fas fa-eye"></i>
+                <p data-titulo="visualizaciones" class="counter">0</p>
+                <h3>Visualizaciones Totales</h3>
+            </div>
+        </div>
     </header>
 
-    <!-- YT -->
+    <!-- sobre mi -->
+
+    <section id="sobre_mi" class="bg-primary centrar_xy">
+        <div class="contenedor mitad">
+            <div class="centrar_xy p-4 sobre_mi--img">
+                <img src="assets/img/presentacion.jpg" alt="Wolfhug">
+            </div>
+
+            <div class="centrar_xy">
+                <div>
+                    <h2>Sobre Mi</h2>
+    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, quae culpa. Dignissimos ipsum nobis vel suscipit beatae voluptates eum sit earum libero eveniet, quia, saepe, voluptate cumque iste quo vitae.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, quae culpa. Dignissimos ipsum nobis vel suscipit beatae voluptates eum sit earum libero eveniet, quia, saepe, voluptate cumque iste quo vitae.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEOS YT -->
 
     <section id="youtube">
+        <div class="contenedor">
+            <h2>Youtube</h2>
 
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt repellat, placeat ipsum molestias veniam tempore maiores esse similique, quasi natus nulla, ratione voluptate inventore amet nemo reiciendis voluptas ex ipsam.
+            Corrupti, itaque eligendi. Voluptatum fuga facilis iure beatae sit odio consectetur adipisci iste recusandae, delectus rerum omnis molestias laudantium qui hic veritatis alias temporibus animi, blanditiis inventore quo nostrum velit.</p>
+
+            <!-- lista de videos -->
+            <div id="youtube_vid">
+                
+            </div>
+        </div>
     </section>
+
+    <!-- Twitter -->
+
+    <section class="bg-info" id="twetter">
+        <div class="contenedor py-3">
+            <div class="centrar_xy">
+                <div>
+                    <div>
+                        <h3 class="text-center">Twitter</h3>
+                        <p class="fs-4">Ven y sigueme en twetter y asi no te perderas nada de mi contenido.</p>
+                        <a href="https://twitter.com/Yo_Soy_Wolfhug?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @Yo_Soy_Wolfhug</a>
+                    </div>
+    
+                    <div class="twitter_card">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="assets/img/tw-img.jpg" alt="twitter img">
+                            </div>
+                            <div class="col-8">
+                                <h3>Name</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
+    
+                        <!-- stats -->
+    
+                        <div class="my-3 tw-stats">
+                            <div class="centrar_xy bg-primary">
+                                <h4>Seguidores</h4>
+                                <p id="tw-seguidores"></p>
+                            </div>
+    
+                            <div class="centrar_xy bg-primary">
+                                <h4>Siguendo</h4>
+                                <p id="tw-siguendo"></p>
+                            </div>
+    
+                            <div class="centrar_xy bg-primary">
+                                <h4>Tweets</h4>
+                                <p id="tw-tweets"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="bg-info p-4 centrar_xy">
+                <div class="twitter-posts">
+                    <a class="twitter-timeline" href="https://twitter.com/Yo_Soy_Wolfhug?ref_src=twsrc%5Etfw">Tweets by Yo_Soy_Wolfhug</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <p>Hecho con 💚 por <a href="https://github.com/JezTheGreenHusky" target="_blank">Jez, The Green Husky <i class="fas fa-paw"></i></a></p>
+        </div>
+    </footer>
+
+    
 
 
     <!-- MODAL OCULTO, se activa automaticamente despues de 2s -->
@@ -115,7 +227,8 @@
         </div>
     </div>
 
-    <!-- scripts: fontawesome, bootstrap y propios -->
+    <!-- scripts: tweter, fontawesome, bootstrap y propios -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="https://kit.fontawesome.com/c88a8a6234.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
