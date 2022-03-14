@@ -359,8 +359,7 @@ twiter
 
 #twetter > div {
     display: grid;
-    grid-template-columns: 1f;
-    column-gap: 2rem;
+    grid-template-columns: 1fr;
 }
 @media (min-width: 1200px) {
     #twetter > div {
@@ -388,9 +387,13 @@ twiter
 .tw-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 1.5rem;
+    column-gap: .5rem;
 
     color: var(--blanco);
+}
+.tw-stats h4{
+    text-align: center;
+    font-size: 16px;
 }
 .tw-stats > div{
     display: flex;
@@ -399,7 +402,21 @@ twiter
     flex-direction: column;
 
     border-radius: 1rem;
-    padding: 1rem;
+    padding: .5rem;
+}
+
+@media (min-width: 768px) {
+    .tw-stats {
+        column-gap: 1.5rem;
+    }
+    .tw-stats > div{
+        padding: 1rem;
+    }
+    .tw-stats h4{
+        text-align: center;
+        font-size: 22px;
+    }
+    
 }
 
 .tw-stats > div p{
