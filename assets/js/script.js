@@ -11,8 +11,8 @@ window.addEventListener("load", () => {
     -----------
     ======================*/
     let module_yt = (async() => {
-        let channel_details_url = "https://www.googleapis.com/youtube/v3/channels?id=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCg5jlzNYfMWaR0PYm2HYYEEI-jZ48_TF0&part=id,snippet,contentDetails,statistics,topicDetails";
-        let vid_list_url = "https://www.googleapis.com/youtube/v3/search?channelId=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCg5jlzNYfMWaR0PYm2HYYEEI-jZ48_TF0&part=id,snippet&maxResults=10";
+        let channel_details_url = "https://www.googleapis.com/youtube/v3/channels?id=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet,contentDetails,statistics,topicDetails";
+        let vid_list_url = "https://www.googleapis.com/youtube/v3/search?channelId=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=10";
         let vid_details_url = "https://www.googleapis.com/youtube/v3/videos?id=PUGKbaHXU48&key=AIzaSyCg5jlzNYfMWaR0PYm2HYYEEI-jZ48_TF0&part=snippet,contentDetails,statistics,status"
 
         let request = await fetch(channel_details_url);
