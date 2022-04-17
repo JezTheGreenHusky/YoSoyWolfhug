@@ -94,7 +94,7 @@ window.addEventListener("load", () => {
             const defaultFetchOptions = {
                 method: 'GET',
                 headers: {
-                    'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAALwwaAEAAAAAY6dpWkihDdoulSbpKdPKpRhr6Hk%3DUYhRm2A86znLANIrE0ebACWAZECVtKQNQldAP43SMIfASYTpvz',
+                    'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAALwwaAEAAAAAy6jPwq2fA%2BZDuQH%2F7jDaX3AyhJg%3DxT14MK9vWqCVhK59iN1NbjzDWSev1jjaJ3631XPhDHdnBJzuHY',
                 },
             };
             let peticion = await fetch(baseTwitterSearchUrl3, defaultFetchOptions)
