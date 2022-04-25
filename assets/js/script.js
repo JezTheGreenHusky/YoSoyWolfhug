@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
         // para el id de wolfhug
         //https://www.googleapis.com/youtube/v3/videos?id=bgP-TrB1j00&key=AIzaSyBXZZCJ8Uo25Raihi2QJQTmdY1bWAjbOEw&part=id,snippet,contentDetails,statistics,topicDetails
         let channel_details_url = "https://www.googleapis.com/youtube/v3/channels?id=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet,contentDetails,statistics,topicDetails";
-        let vid_list_url = "https://www.googleapis.com/youtube/v3/search?channelid=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=10";
+        let vid_list_url = "https://www.googleapis.com/youtube/v3/search?channelId=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=10";
         let vid_details_url = "https://www.googleapis.com/youtube/v3/videos?id=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=snippet,contentDetails,statistics,status"
 
         let request = await fetch(channel_details_url);
