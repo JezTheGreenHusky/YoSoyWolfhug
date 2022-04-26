@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
                 </div>
-                <h4 class="text-center fs-3">${titulo}</h4>
+                <h4 class="text-center fs-4">${titulo}</h4>
             </div>
             `;    
         }
@@ -70,7 +70,7 @@ window.addEventListener("load", () => {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                     </div>
-                    <h4 class="text-center fs-3">${titulo2}</h4>
+                    <h4 class="text-center fs-4">${titulo2}</h4>
                 </div>
             `;    
         }
