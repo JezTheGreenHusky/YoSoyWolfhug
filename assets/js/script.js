@@ -65,7 +65,10 @@ window.addEventListener("load", () => {
         let vid_details_url = `https://www.googleapis.com/youtube/v3/videos?id=${vid_id2}&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=snippet,contentDetails,statistics,status`;
         let request_stat = await fetch(vid_details_url);
         let respuesta_stat = await request_stat.json();
-        console.log(respuesta_stat)
+
+        let visitas = respuesta_stat.items[0].statistics.viewCount
+        document.getElementById("mostView").innerHTML = visitas;
+        //console.log(respuesta_stat)
 
         if(vid_id != undefined){
             video_obj3.innerHTML = `

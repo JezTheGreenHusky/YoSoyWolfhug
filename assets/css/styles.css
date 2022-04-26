@@ -317,7 +317,7 @@ Youtube
 }
 
 .youtube_vid {
-    margin: 2rem auto;
+    margin: 4rem auto;
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 2rem;
