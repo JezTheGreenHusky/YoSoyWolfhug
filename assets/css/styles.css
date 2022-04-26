@@ -325,7 +325,7 @@ Youtube
 @media (min-width: 768px) {
     .youtube_vid {
         grid-template-columns: 1fr 1fr;
-        column-gap: 2rem;
+        column-gap: 4rem;
     }
 }
 
