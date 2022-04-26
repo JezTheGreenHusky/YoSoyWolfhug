@@ -14,8 +14,11 @@ window.addEventListener("load", () => {
         // para el id de wolfhug
         //https://www.googleapis.com/youtube/v3/videos?id=bgP-TrB1j00&key=AIzaSyBXZZCJ8Uo25Raihi2QJQTmdY1bWAjbOEw&part=id,snippet,contentDetails,statistics,topicDetails
         let channel_details_url = "https://www.googleapis.com/youtube/v3/channels?id=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet,contentDetails,statistics,topicDetails";
-        let vid_list_url = "https://www.googleapis.com/youtube/v3/search?channelId=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=10";
-        let vid_details_url = "https://www.googleapis.com/youtube/v3/videos?id=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=snippet,contentDetails,statistics,status"
+        //let vid_list_url = "https://www.googleapis.com/youtube/v3/search?channelId=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=10";
+        let vid_masVisto = "https://www.googleapis.com/youtube/v3/search?channelId=UC189sYpAW3JTAeo_pwDlf3w&order=date&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=1";
+        let vid_ultimo = "https://www.googleapis.com/youtube/v3/search?channelId=UC189sYpAW3JTAeo_pwDlf3w&order=viewCount&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=1";
+        
+        // let vid_details_url = "https://www.googleapis.com/youtube/v3/videos?id=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=snippet,contentDetails,statistics,status"
 
         let request = await fetch(channel_details_url);
         let respuesta = await request.json();
@@ -24,29 +27,51 @@ window.addEventListener("load", () => {
         let videos = respuesta.items[0].statistics.videoCount;
         let visualizaciones = respuesta.items[0].statistics.viewCount;
 
-        // lista de videos
-        let request2 = await fetch(vid_list_url);
+        // ultimo video
+        let request2 = await fetch(vid_ultimo);
         let respuesta2 = await request2.json();
     
         let lista_busqueda = respuesta2.items;
-        lista_busqueda.forEach(element => {
-            let vid_id = element.id.videoId;
-            let titulo = element.snippet.title
-            let video_obj = document.getElementById("youtube_vid");
-            
-            if(vid_id != undefined){
-                video_obj.innerHTML += `
-                    <div class="vid_item">
-                        <h4 class="text-center">${titulo}</h4>
-                        <div class="centrar_xy">
-                            <iframe src="https://www.youtube.com/embed/${vid_id}" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
+
+        let vid_id = lista_busqueda.id.videoId;
+        let titulo = lista_busqueda.snippet.title
+        let video_obj = document.getElementById("youtube_ultimo");
+        
+        if(vid_id != undefined){
+            video_obj.innerHTML = `
+                <div class="vid_item">
+                    <h4 class="text-center">${titulo}</h4>
+                    <div class="centrar_xy">
+                        <iframe src="https://www.youtube.com/embed/${vid_id}" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
-                `;    
-            }
-        });
+                </div>
+            `;    
+        }
+
+        // video mas visto
+        let request3 = await fetch(vid_masVisto);
+        let respuesta3 = await request3.json();
+    
+        let busqueda = respuesta3.items;
+
+        let vid_id2 = busqueda.id.videoId;
+        let titulo2 = busqueda.snippet.title
+        let video_obj3 = document.getElementById("youtube_masVisto");
+        
+        if(vid_id != undefined){
+            video_obj3.innerHTML = `
+                <div class="vid_item">
+                    <h4 class="text-center">${titulo2}</h4>
+                    <div class="centrar_xy">
+                        <iframe src="https://www.youtube.com/embed/${vid_id2}" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            `;    
+        }
 
 
         // https://www.youtube.com/embed/wpB8uWVXoQg
