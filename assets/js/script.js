@@ -33,6 +33,8 @@ window.addEventListener("load", () => {
     
         let lista_busqueda = respuesta2.items;
 
+        console.log(lista_busqueda)
+
         let vid_id = lista_busqueda.id.videoId;
         let titulo = lista_busqueda.snippet.title
         let video_obj = document.getElementById("youtube_ultimo");
