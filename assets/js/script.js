@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
     
         let lista_busqueda = respuesta2.items;
 
-        console.log(lista_busqueda)
+        //console.log(lista_busqueda)
 
         let vid_id = lista_busqueda[0].id.videoId;
         let titulo = lista_busqueda[0].snippet.title
@@ -41,14 +41,14 @@ window.addEventListener("load", () => {
         
         if(vid_id != undefined){
             video_obj.innerHTML = `
-                <div class="vid_item">
-                    <h4 class="text-center">${titulo}</h4>
-                    <div class="centrar_xy">
-                        <iframe src="https://www.youtube.com/embed/${vid_id}" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
+            <div>
+                <div class="centrar_xy">
+                    <iframe src="https://www.youtube.com/embed/${vid_id}" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
                 </div>
+                <h4 class="text-center fs-3">${titulo}</h4>
+            </div>
             `;    
         }
 
@@ -61,24 +61,16 @@ window.addEventListener("load", () => {
         let vid_id2 = busqueda[0].id.videoId;
         let titulo2 = busqueda[0].snippet.title
         let video_obj3 = document.getElementById("youtube_masVisto");
-        
-        let vid_details_url = `https://www.googleapis.com/youtube/v3/videos?id=${vid_id2}&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=snippet,contentDetails,statistics,status`;
-        let request_stat = await fetch(vid_details_url);
-        let respuesta_stat = await request_stat.json();
-
-        let visitas = respuesta_stat.items[0].statistics.viewCount
-        document.getElementById("mostView").innerHTML = visitas;
-        //console.log(respuesta_stat)
 
         if(vid_id != undefined){
             video_obj3.innerHTML = `
-                <div class="vid_item">
-                    <h4 class="text-center">${titulo2}</h4>
+                <div>
                     <div class="centrar_xy">
                         <iframe src="https://www.youtube.com/embed/${vid_id2}" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     </div>
+                    <h4 class="text-center fs-3">${titulo2}</h4>
                 </div>
             `;    
         }
