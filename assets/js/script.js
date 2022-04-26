@@ -15,10 +15,10 @@ window.addEventListener("load", () => {
         //https://www.googleapis.com/youtube/v3/videos?id=bgP-TrB1j00&key=AIzaSyBXZZCJ8Uo25Raihi2QJQTmdY1bWAjbOEw&part=id,snippet,contentDetails,statistics,topicDetails
         let channel_details_url = "https://www.googleapis.com/youtube/v3/channels?id=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet,contentDetails,statistics,topicDetails";
         //let vid_list_url = "https://www.googleapis.com/youtube/v3/search?channelId=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=10";
-        let vid_masVisto = "https://www.googleapis.com/youtube/v3/search?channelId=UC189sYpAW3JTAeo_pwDlf3w&order=date&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=1";
-        let vid_ultimo = "https://www.googleapis.com/youtube/v3/search?channelId=UC189sYpAW3JTAeo_pwDlf3w&order=viewCount&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=1";
+        let vid_masVisto = "https://www.googleapis.com/youtube/v3/search?channelId=UC189sYpAW3JTAeo_pwDlf3w&order=viewCount&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=1";
+        let vid_ultimo = "https://www.googleapis.com/youtube/v3/search?channelId=UC189sYpAW3JTAeo_pwDlf3w&order=date&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=id,snippet&maxResults=1";
         
-        // let vid_details_url = "https://www.googleapis.com/youtube/v3/videos?id=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=snippet,contentDetails,statistics,status"
+        //let vid_details_url = "https://www.googleapis.com/youtube/v3/videos?id=UC189sYpAW3JTAeo_pwDlf3w&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=snippet,contentDetails,statistics,status"
 
         let request = await fetch(channel_details_url);
         let respuesta = await request.json();
@@ -35,8 +35,8 @@ window.addEventListener("load", () => {
 
         console.log(lista_busqueda)
 
-        let vid_id = lista_busqueda.id.videoId;
-        let titulo = lista_busqueda.snippet.title
+        let vid_id = lista_busqueda[0].id.videoId;
+        let titulo = lista_busqueda[0].snippet.title
         let video_obj = document.getElementById("youtube_ultimo");
         
         if(vid_id != undefined){
@@ -58,10 +58,15 @@ window.addEventListener("load", () => {
     
         let busqueda = respuesta3.items;
 
-        let vid_id2 = busqueda.id.videoId;
-        let titulo2 = busqueda.snippet.title
+        let vid_id2 = busqueda[0].id.videoId;
+        let titulo2 = busqueda[0].snippet.title
         let video_obj3 = document.getElementById("youtube_masVisto");
         
+        let vid_details_url = `https://www.googleapis.com/youtube/v3/videos?id=${vid_id2}&key=AIzaSyCKzbklGd6MPoTOgbWkpr5DPn9hxlEK6SA&part=snippet,contentDetails,statistics,status`;
+        let request_stat = await fetch(vid_details_url);
+        let respuesta_stat = await request_stat.json();
+        console.log(respuesta_stat)
+
         if(vid_id != undefined){
             video_obj3.innerHTML = `
                 <div class="vid_item">
