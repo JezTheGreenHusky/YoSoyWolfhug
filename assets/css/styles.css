@@ -335,8 +335,13 @@ Youtube
     background-color: #9b2622;
     border-radius: 1rem;
     margin: 2rem auto;
+    width: 80%;
 }
-
+@media (min-width: 768px) {
+    .vid_item {
+        width: 100%;
+    }
+}
 /*======================
 -----------
 twiter
