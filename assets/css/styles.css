@@ -335,11 +335,17 @@ Youtube
     background-color: #9b2622;
     border-radius: 1rem;
     margin: 2rem auto;
-    width: 80%;
+    width: 100%;
 }
+.vid_item iframe{
+    width: 63vw;
+    height: 35vw;
+}
+
 @media (min-width: 768px) {
-    .vid_item {
-        width: 100%;
+    .vid_item iframe{
+        width: 33vw;
+        height: 19vw;
     }
 }
 /*======================
