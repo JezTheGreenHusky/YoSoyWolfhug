@@ -117,7 +117,7 @@ window.addEventListener("load", () => {
         animacion();
 
         let twiter = async() => {
-            const baseTwitterSearchUrl3 = 'https://jezproxy.herokuapp.com/https://api.twitter.com/2/users?ids=1176919160737161216&user.fields=created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,url,username,verified,withheld,public_metrics&expansions=pinned_tweet_id'
+            const baseTwitterSearchUrl3 = 'https://api.allorigins.win/raw?url=https://api.twitter.com/2/users?ids=1176919160737161216&user.fields=created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,url,username,verified,withheld,public_metrics&expansions=pinned_tweet_id'
 
 
             const defaultFetchOptions = {
